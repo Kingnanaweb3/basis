@@ -1,0 +1,13 @@
+{
+  "name": "numa-probe",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "probe": "node src/cli.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "viem": "^2.21.0"
+  }
+}
