@@ -1,0 +1,27 @@
+[
+  {
+    "ticker": "TSLA",
+    "address": "0x322F0929c4625eD5bAd873c95208D54E1c003b2d",
+    "name": "Tesla • Robinhood Token",
+    "symbol": "TSLA",
+    "decimals": 18,
+    "totalSupply": "12629074000000000000000",
+    "paused": false,
+    "pausedSupported": true,
+    "uiMultiplier": "1000000000000000000",
+    "uiMultiplierSupported": true,
+    "proberBalance": "60839619580494087",
+    "transfer": {
+      "status": "allowed_at_contract",
+      "detail": "Contract-level simulation succeeded. Sequencer-level screening is NOT covered by this result."
+    },
+    "transferWithValue": {
+      "status": "allowed_at_contract",
+      "detail": "Contract-level simulation succeeded. Sequencer-level screening is NOT covered by this result."
+    },
+    "probeMethod": "eth_call simulation",
+    "coverageCaveat": "eth_call does not pass through the sequencer compliance engine. A pass here does not guarantee a real signed transaction is sequenced.",
+    "verifiedAtBlock": "66056830",
+    "verifiedAt": "2026-09-18T07:46:17.799Z"
+  }
+]

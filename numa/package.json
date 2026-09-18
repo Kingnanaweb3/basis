@@ -5,7 +5,8 @@
   "type": "module",
   "scripts": {
     "probe": "node src/cli.js",
-    "test": "node --test test/*.test.js"
+    "test": "node --test test/*.test.js",
+    "sync": "node src/sync.js"
   },
   "dependencies": {
     "viem": "^2.21.0"
