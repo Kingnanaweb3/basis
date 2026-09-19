@@ -1,40 +1,27 @@
 # The problem
 
 A token can represent exposure to a real world asset without giving the holder
-the rights that owning the underlying asset would give.
+the rights that owning the underlying asset would give. Mapping those rights per
+asset was the original idea behind this project.
 
-Depending on the instrument, a token may carry economic exposure, a claim on
-distributions, redemption rights, transfer rights, collateral eligibility,
-voting rights, or none of these. Today that information sits scattered across
-token contracts, issuer documentation, legal terms, protocol documentation and
-chain state.
+It did not survive measurement. Robinhood Stock Tokens are issued by a single
+issuer under one legal wrapper, and they returned identical values on every
+dimension we could read. See [Findings](../findings.md).
 
-## What we found when we checked
+## What the problem turned out to be
 
-The original premise for this project assumed that different tokenized assets
-would carry different rights, and that mapping them per asset would be the
-product.
+Not rights. Pricing.
 
-For Robinhood Stock Tokens, that assumption does not hold. They are tokenised
-debt securities issued by a single issuer, Robinhood Assets (Jersey) Limited.
-They give economic exposure and do not grant legal or beneficial ownership in
-the underlying security. Voting is not passed through. Dividends are credited as
-a cash equivalent inside the Robinhood app rather than as an onchain event. The
-contracts share a standardised template.
+The issuer exposes a corporate action multiplier that adjusts how many shares a
+token represents. The REST price endpoint is not multiplier adjusted. The
+onchain price feed is. An integrator who mixes the two gets a wrong number, and
+nothing in the token contract or a block explorer warns them.
 
-So the legal answer is the same for every one of them. Mapping ninety six assets
-would produce ninety six identical cards.
-
-## The real gap
-
-What is not constant is the operational layer. Whether a specific token can be
-moved, minted, redeemed, priced or used as collateral right now varies per asset
-and changes over time. None of it is visible in a block explorer.
-
-That is where Basis is aimed.
+28 of 194 assets are currently affected. CRWD, after a 4 for 1 split, is off by
+300 percent.
 
 ## Positioning
 
-Category: rights and restrictions intelligence for tokenized assets.
+Category: a pricing safety check for tokenized assets.
 
-Core sentence: know what you can actually do with this token, right now.
+Core sentence: check the multiplier before you trust the price.

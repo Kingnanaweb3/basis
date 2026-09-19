@@ -3,29 +3,20 @@
 ## In scope
 
 * Robinhood Chain Stock Tokens
-* One shared issuer terms record, sourced and linked
-* Per asset live restriction and status data
-* Transfer probing, with its coverage limits stated
-* A read interface and, later, a read API
+* Reading the corporate action multiplier from both the registry and the chain
+* Reporting which assets make naive pricing wrong, and by how much
+* Flagging any disagreement between the two sources
+* A read only API over that data
 
 ## Out of scope
 
-Basis is deliberately not any of the following:
-
-* a stock token screener
-* a portfolio tracker
-* a trading venue
-* a price dashboard
-* a generic RWA explorer
-* a source of legal advice
-
-The product is about rights and restrictions attached to tokenized assets.
-Anything that pulls it toward price or trading dilutes that.
+* Rights and restriction mapping. Measured, found uniform, dropped.
+* The transfer probe. Kept as a diagnostic, removed from the serving path.
+* Price data. Basis reports the multiplier, not the price.
+* A portfolio tracker, a screener, a trading venue, or legal advice.
+* A token. The only justification depended on the premise that failed.
 
 ## Why a blockchain is involved
 
-The chain provides verifiable asset and token state. Basis's job is to translate
-that state, plus authoritative issuer documentation, into a standardised layer
-that people and applications can read.
-
-The chain is not the product. The claim information is the product.
+The multiplier is onchain, and the mismatch it causes is between onchain and
+offchain sources. Basis reads both and reports where they diverge.
