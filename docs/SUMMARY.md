@@ -1,6 +1,7 @@
 # Table of contents
 
 * [Basis](README.md)
+* [Findings](findings.md)
 
 ## Overview
 
@@ -16,14 +17,9 @@
 
 * [Architecture](architecture.md)
 * [Running the probe](guides/running-the-probe.md)
-
-## Reference
-
 * [Data model](reference/data-model.md)
-* [API](reference/api.md)
-* [BASIS token](reference/token.md)
 
-## Honesty
+## Status
 
 * [Roadmap](roadmap.md)
 * [Limitations](limitations.md)

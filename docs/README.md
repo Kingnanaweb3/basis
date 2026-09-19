@@ -1,36 +1,41 @@
 # Basis
 
-Basis is a rights and restrictions layer for tokenized real world assets on
-Robinhood Chain.
+Basis checks one thing: whether a Robinhood Stock Token carries a corporate
+action multiplier that makes naive pricing wrong.
 
-## The gap
+## Why only one thing
 
-Robinhood Stock Tokens are tokenised debt securities issued by Robinhood Assets
-(Jersey) Limited. They give economic exposure to an underlying security and do
-not grant legal or beneficial ownership in it. Dividends are credited as a cash
-equivalent inside the Robinhood app rather than as an onchain distribution.
-Voting is not passed through.
+Basis started as a rights and restrictions map for tokenized real world assets.
+The assumption was that different tokenized assets carry different rights and
+restrictions, and that mapping those differences would be the product.
 
-That is true of every Stock Token. The legal answer is one paragraph, and Basis
-states it once.
+We measured it across all 194 assets on Robinhood Chain. They do not differ.
+Same issuer, same legal wrapper, same status, same pause state, same transfer
+behaviour. The tradability fields the issuer documents are empty in production.
 
-What is not constant is whether a given token can be moved, minted, redeemed,
-priced or used as collateral at this moment. That varies per asset and changes
-over time, and it is not visible in a block explorer.
+One signal varies. 28 of 194 assets carry a corporate action multiplier above 1.
 
-## What Basis builds
+See [Findings](findings.md) for the full measurement, including everything that
+failed.
 
-A live status layer over the assets, with every field labelled by how it was
-established:
+## What the multiplier does
 
-* read directly from contract state
-* taken from issuer documentation, with a link
-* probed by simulation, with its coverage limits stated
+The issuer's REST price endpoint returns the raw underlying equity price, not
+multiplier adjusted. The onchain price feed is multiplier adjusted. An
+integrator who reads a token balance and multiplies by the REST price without
+applying the multiplier gets a wrong number on those 28 assets.
 
-The third label is the one that makes Basis different, and it is also the one
-with the most caveats. Both are documented.
+The error is roughly 0.01 to 0.5 percent. Small, systematic and silent.
 
-## Current state
+## Run it
 
-The transfer probe runs and is tested. Nothing else is built yet. Sections
-marked "planned" are design, not shipped software.
+    npm install
+    npm test
+    npm run sync     # read the asset registry
+    npm run probe    # read contract state per asset
+    npm run check    # report multiplier exposure
+
+## Status
+
+Early. The three commands above work and are tested. There is no interface, no
+API and no token.

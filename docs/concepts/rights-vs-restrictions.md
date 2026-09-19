@@ -38,3 +38,14 @@ This is the part that moves, and the part Basis refreshes.
 
 If you merge them, every asset looks identical and the product has nothing to
 say. Keeping them apart is what leaves room for a per asset answer.
+
+## Correction
+
+The restrictions listed above were expected to vary per asset. They were
+measured across all 194 assets and they do not. Status, pause state and transfer
+behaviour returned identical values throughout, and the tradability fields came
+back empty.
+
+This page is kept because the distinction between rights and restrictions is
+still the right way to think about the problem. It just has no per asset answer
+on this chain today. See [Findings](../findings.md).

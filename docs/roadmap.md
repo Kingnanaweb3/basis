@@ -1,36 +1,29 @@
 # Roadmap
 
-Honest status labels only. Built means it runs and is tested.
-
 ## Built
 
-* Transfer prober with zero amount and one unit probing
-* Status classifier with eight unit tests
+* Asset registry sync from the issuer read API, filtered to chain 4663
 * Contract state reader with per field support flags
-* JSON profile output with block number and timestamp
+* Transfer probe with zero amount and one unit probing
+* Status classifier
+* Multiplier check comparing chain state against the registry
+* 27 unit tests
 
-## Next
+## Measured and dropped
 
-* Verify the probe against live mainnet state
-* Confirm the optional ABI fragments against a real deployment
-* Read the asset list from the onchain registry rather than a manual file
-* Measure how many assets actually diverge from one another. This number decides
-  whether the product is viable, and it is not yet known.
+The per asset rights and restrictions layer. See [Findings](findings.md). Every
+signal except the multiplier returned an identical value across all 194 assets.
 
-## Later
+## Possible next
 
-* Price feed presence and staleness per asset
-* Mint and redemption window state
-* Lending and AMM venue listings
-* Jurisdiction restriction sets
-* Persistence and change history
-* Read API
-* Web interface
+* Watch for multiplier changes over time and alert on them. The corporate
+  actions endpoint explains why a multiplier moved, so a change log is feasible.
+* Check whether the chain and the registry ever disagree on a multiplier. The
+  check reports this. If it is always zero, there is nothing here.
+* A small published dataset of which assets are affected.
 
-## Open questions
+## Not planned
 
-* Does a real signed transaction get screened differently from a simulation? This
-  is untested and it determines how much of the product is real.
-* Is the divergence between assets large enough to justify a per asset view?
-* Does the token design survive contact with someone who is not already sold on
-  it?
+A token. The only justification for one was bonding attestations on rights data,
+and that data turned out not to vary. Without the premise there is no reason for
+it, so it was removed rather than rewritten.

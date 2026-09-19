@@ -39,3 +39,15 @@ fact, and an unreadable value is never defaulted to a convenient one.
 
 Solidity with Foundry for contracts. Node with viem for the reader and prober.
 Standard Ethereum tooling works on this chain without modification.
+
+## Components added since
+
+**Registry sync.** Reads the issuer asset API, keeps deployments on chain 4663,
+rewrites the asset list and groups assets by restriction profile to count how
+many genuinely differ.
+
+**Multiplier check.** Compares the onchain multiplier against the registry value
+and reports the pricing error in basis points, plus any disagreement between the
+two sources.
+
+**Store.** Still not built. Flat JSON files under `out/` for now.
