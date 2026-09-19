@@ -17,7 +17,7 @@ const file = arg("--assets", "assets.json");
 const assets = JSON.parse(readFileSync(file, "utf8"));
 const client = makeClient();
 
-console.log(`Numa probe  |  chain 4663  |  from ${from}  ->  ${to}\n`);
+console.log(`Basis probe  |  chain 4663  |  from ${from}  ->  ${to}\n`);
 
 const results = [];
 for (const asset of assets) {

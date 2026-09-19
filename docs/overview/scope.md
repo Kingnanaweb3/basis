@@ -10,7 +10,7 @@
 
 ## Out of scope
 
-Numa is deliberately not any of the following:
+Basis is deliberately not any of the following:
 
 * a stock token screener
 * a portfolio tracker
@@ -24,7 +24,7 @@ Anything that pulls it toward price or trading dilutes that.
 
 ## Why a blockchain is involved
 
-The chain provides verifiable asset and token state. Numa's job is to translate
+The chain provides verifiable asset and token state. Basis's job is to translate
 that state, plus authoritative issuer documentation, into a standardised layer
 that people and applications can read.
 

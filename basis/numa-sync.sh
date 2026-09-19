@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Numa - registry sync + divergence counter
-# Run from the numa/ folder: bash numa-sync.sh
+# Basis - registry sync + divergence counter
+# Run from the basis/ folder: bash basis-sync.sh
 set -euo pipefail
 
 if [ ! -f "package.json" ]; then
-  echo "Run this from inside the numa/ folder (the one with package.json)."
+  echo "Run this from inside the basis/ folder (the one with package.json)."
   exit 1
 fi
 

@@ -1,4 +1,4 @@
-// Pure function: turns a raw probe outcome into a Numa status.
+// Pure function: turns a raw probe outcome into a Basis status.
 // Kept free of network code so it is unit testable.
 
 const POLICY_HINTS = [

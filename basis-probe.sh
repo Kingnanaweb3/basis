@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
-# Numa MVP - transfer probe
-# Drop this in your project root and run: bash numa-probe.sh
+# Basis MVP - transfer probe
+# Drop this in your project root and run: bash basis-probe.sh
 set -euo pipefail
 
-ROOT="numa"
+ROOT="basis"
 echo "Writing $ROOT/ ..."
 
 mkdir -p "$ROOT/src" "$ROOT/test" "$ROOT/out"
@@ -11,7 +11,7 @@ mkdir -p "$ROOT/src" "$ROOT/test" "$ROOT/out"
 # ---------------------------------------------------------------- package.json
 cat > "$ROOT/package.json" <<'EOF'
 {
-  "name": "numa-probe",
+  "name": "basis-probe",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -41,7 +41,7 @@ export const robinhoodChain = defineChain({
   name: "Robinhood Chain",
   nativeCurrency: { name: "Ether", symbol: "ETH", decimals: 18 },
   rpcUrls: {
-    default: { http: [process.env.NUMA_RPC || "https://rpc.mainnet.chain.robinhood.com"] }
+    default: { http: [process.env.BASIS_RPC || "https://rpc.mainnet.chain.robinhood.com"] }
   },
   blockExplorers: {
     default: { name: "Blockscout", url: "https://robinhoodchain.blockscout.com" }
@@ -85,7 +85,7 @@ EOF
 
 # ---------------------------------------------------------------- src/classify.js
 cat > "$ROOT/src/classify.js" <<'EOF'
-// Pure function: turns a raw probe outcome into a Numa status.
+// Pure function: turns a raw probe outcome into a Basis status.
 // Kept free of network code so it is unit testable.
 
 const POLICY_HINTS = [
@@ -245,7 +245,7 @@ const file = arg("--assets", "assets.json");
 const assets = JSON.parse(readFileSync(file, "utf8"));
 const client = makeClient();
 
-console.log(`Numa probe  |  chain 4663  |  from ${from}  ->  ${to}\n`);
+console.log(`Basis probe  |  chain 4663  |  from ${from}  ->  ${to}\n`);
 
 const results = [];
 for (const asset of assets) {
@@ -319,13 +319,13 @@ EOF
 
 # ---------------------------------------------------------------- README
 cat > "$ROOT/README.md" <<'EOF'
-# Numa probe (MVP)
+# Basis probe (MVP)
 
 One question: can this Stock Token actually move right now?
 
 ## Run
 
-    cd numa
+    cd basis
     npm install
     npm test
     npm run probe -- --from 0xYourAddress --to 0xSomeOtherAddress

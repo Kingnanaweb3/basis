@@ -1,6 +1,6 @@
-# Numa
+# Basis
 
-Numa is a rights and restrictions layer for tokenized real world assets on
+Basis is a rights and restrictions layer for tokenized real world assets on
 Robinhood Chain.
 
 ## The gap
@@ -11,14 +11,14 @@ not grant legal or beneficial ownership in it. Dividends are credited as a cash
 equivalent inside the Robinhood app rather than as an onchain distribution.
 Voting is not passed through.
 
-That is true of every Stock Token. The legal answer is one paragraph, and Numa
+That is true of every Stock Token. The legal answer is one paragraph, and Basis
 states it once.
 
 What is not constant is whether a given token can be moved, minted, redeemed,
 priced or used as collateral at this moment. That varies per asset and changes
 over time, and it is not visible in a block explorer.
 
-## What Numa builds
+## What Basis builds
 
 A live status layer over the assets, with every field labelled by how it was
 established:
@@ -27,7 +27,7 @@ established:
 * taken from issuer documentation, with a link
 * probed by simulation, with its coverage limits stated
 
-The third label is the one that makes Numa different, and it is also the one
+The third label is the one that makes Basis different, and it is also the one
 with the most caveats. Both are documented.
 
 ## Current state

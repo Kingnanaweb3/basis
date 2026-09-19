@@ -2,8 +2,8 @@
 
 ## Install
 
-    bash numa-probe.sh
-    cd numa
+    bash basis-probe.sh
+    cd basis
     npm install
 
 ## Test
@@ -39,4 +39,4 @@ a matching ticker at a different address is not a Robinhood Stock Token.
 
 ## Configuration
 
-Set `NUMA_RPC` to override the default mainnet endpoint.
+Set `BASIS_RPC` to override the default mainnet endpoint.

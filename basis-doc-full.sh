@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
-# Numa - full project documentation
-# Run from your project root (the folder containing docs/): bash numa-doc-full.sh
+# Basis - full project documentation
+# Run from your project root (the folder containing docs/): bash basis-doc-full.sh
 set -euo pipefail
 
 if [ ! -d "docs" ]; then
-  echo "No docs/ folder here. Run this from the project root, after numa-docs.sh."
+  echo "No docs/ folder here. Run this from the project root, after basis-docs.sh."
   exit 1
 fi
 
@@ -47,7 +47,7 @@ What is not constant is the operational layer. Whether a specific token can be
 moved, minted, redeemed, priced or used as collateral right now varies per asset
 and changes over time. None of it is visible in a block explorer.
 
-That is where Numa is aimed.
+That is where Basis is aimed.
 
 ## Positioning
 
@@ -69,7 +69,7 @@ cat > docs/overview/scope.md <<'EOF'
 
 ## Out of scope
 
-Numa is deliberately not any of the following:
+Basis is deliberately not any of the following:
 
 * a stock token screener
 * a portfolio tracker
@@ -83,7 +83,7 @@ Anything that pulls it toward price or trading dilutes that.
 
 ## Why a blockchain is involved
 
-The chain provides verifiable asset and token state. Numa's job is to translate
+The chain provides verifiable asset and token state. Basis's job is to translate
 that state, plus authoritative issuer documentation, into a standardised layer
 that people and applications can read.
 
@@ -137,7 +137,7 @@ EOF
 
 # ---------------------------------------------------------------- token
 cat > docs/reference/token.md <<'EOF'
-# NUMA token
+# BASIS token
 
 Status: proposed. No contract is deployed. Nothing on this page exists yet.
 
@@ -153,17 +153,17 @@ either. It is stated plainly rather than dressed up.
 
 ## Proposed design
 
-**NUMA**, an ERC-20 on Robinhood Chain. It has no gas role, because gas on this
+**BASIS**, an ERC-20 on Robinhood Chain. It has no gas role, because gas on this
 chain is paid in ETH.
 
 **Attestation bonds.** Publishing or updating a claim profile requires posting a
-NUMA bond. The entry goes live immediately.
+BASIS bond. The entry goes live immediately.
 
 **Challenge and slash.** A challenge window during which anyone can dispute an
 entry by matching the bond. A wrong publisher loses their bond to the
 challenger. A wrong challenger loses theirs to the publisher.
 
-**Query fees.** High volume API consumers pay in NUMA. Fees route to bonded
+**Query fees.** High volume API consumers pay in BASIS. Fees route to bonded
 attesters.
 
 ## Known weaknesses
@@ -220,7 +220,7 @@ EOF
 cat > docs/SUMMARY.md <<'EOF'
 # Table of contents
 
-* [Numa](README.md)
+* [Basis](README.md)
 
 ## Overview
 
@@ -241,7 +241,7 @@ cat > docs/SUMMARY.md <<'EOF'
 
 * [Data model](reference/data-model.md)
 * [API](reference/api.md)
-* [NUMA token](reference/token.md)
+* [BASIS token](reference/token.md)
 
 ## Honesty
 

@@ -1,6 +1,6 @@
 # Table of contents
 
-* [Numa](README.md)
+* [Basis](README.md)
 
 ## Overview
 
@@ -21,7 +21,7 @@
 
 * [Data model](reference/data-model.md)
 * [API](reference/api.md)
-* [NUMA token](reference/token.md)
+* [BASIS token](reference/token.md)
 
 ## Honesty
 

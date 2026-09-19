@@ -1,10 +1,10 @@
-# Numa probe (MVP)
+# Basis probe (MVP)
 
 One question: can this Stock Token actually move right now?
 
 ## Run
 
-    cd numa
+    cd basis
     npm install
     npm test
     npm run probe -- --from 0xYourAddress --to 0xSomeOtherAddress

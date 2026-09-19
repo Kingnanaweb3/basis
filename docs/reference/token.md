@@ -1,4 +1,4 @@
-# NUMA token
+# BASIS token
 
 Status: proposed. No contract is deployed. Nothing on this page exists yet.
 
@@ -14,17 +14,17 @@ either. It is stated plainly rather than dressed up.
 
 ## Proposed design
 
-**NUMA**, an ERC-20 on Robinhood Chain. It has no gas role, because gas on this
+**BASIS**, an ERC-20 on Robinhood Chain. It has no gas role, because gas on this
 chain is paid in ETH.
 
 **Attestation bonds.** Publishing or updating a claim profile requires posting a
-NUMA bond. The entry goes live immediately.
+BASIS bond. The entry goes live immediately.
 
 **Challenge and slash.** A challenge window during which anyone can dispute an
 entry by matching the bond. A wrong publisher loses their bond to the
 challenger. A wrong challenger loses theirs to the publisher.
 
-**Query fees.** High volume API consumers pay in NUMA. Fees route to bonded
+**Query fees.** High volume API consumers pay in BASIS. Fees route to bonded
 attesters.
 
 ## Known weaknesses

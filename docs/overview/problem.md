@@ -31,7 +31,7 @@ What is not constant is the operational layer. Whether a specific token can be
 moved, minted, redeemed, priced or used as collateral right now varies per asset
 and changes over time. None of it is visible in a block explorer.
 
-That is where Numa is aimed.
+That is where Basis is aimed.
 
 ## Positioning
 

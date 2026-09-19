@@ -26,6 +26,6 @@ registry.
 
 ## Not legal advice
 
-Numa reports what documentation and chain state say. It links to primary sources
+Basis reports what documentation and chain state say. It links to primary sources
 and does not interpret them. It is not advice of any kind, and the underlying
 assets are restricted in a number of jurisdictions.

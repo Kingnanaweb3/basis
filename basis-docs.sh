@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
-# Numa - docs + repo scaffold for GitBook sync
-# Run from your project root: bash numa-docs.sh
+# Basis - docs + repo scaffold for GitBook sync
+# Run from your project root: bash basis-docs.sh
 set -euo pipefail
 
 echo "Writing docs scaffold ..."
@@ -28,11 +28,11 @@ EOF
 
 # ---------------------------------------------------------------- repo README
 cat > README.md <<'EOF'
-# Numa
+# Basis
 
 Rights and restrictions intelligence for tokenized real-world assets on Robinhood Chain.
 
-Numa answers one question that block explorers do not: can this token actually
+Basis answers one question that block explorers do not: can this token actually
 move right now, and if not, why not.
 
 Status: early. The transfer probe is the only working component. Everything else
@@ -40,8 +40,8 @@ in the documentation is marked as planned or unverified.
 
 ## Quick start
 
-    bash numa-probe.sh
-    cd numa
+    bash basis-probe.sh
+    cd basis
     npm install
     npm test
     npm run probe -- --from 0xYourAddress --to 0xOtherAddress
@@ -53,7 +53,7 @@ EOF
 cat > docs/SUMMARY.md <<'EOF'
 # Table of contents
 
-* [Numa](README.md)
+* [Basis](README.md)
 
 ## Concepts
 
@@ -76,9 +76,9 @@ EOF
 
 # ---------------------------------------------------------------- docs/README
 cat > docs/README.md <<'EOF'
-# Numa
+# Basis
 
-Numa is a rights and restrictions layer for tokenized real world assets on
+Basis is a rights and restrictions layer for tokenized real world assets on
 Robinhood Chain.
 
 ## The gap
@@ -89,14 +89,14 @@ not grant legal or beneficial ownership in it. Dividends are credited as a cash
 equivalent inside the Robinhood app rather than as an onchain distribution.
 Voting is not passed through.
 
-That is true of every Stock Token. The legal answer is one paragraph, and Numa
+That is true of every Stock Token. The legal answer is one paragraph, and Basis
 states it once.
 
 What is not constant is whether a given token can be moved, minted, redeemed,
 priced or used as collateral at this moment. That varies per asset and changes
 over time, and it is not visible in a block explorer.
 
-## What Numa builds
+## What Basis builds
 
 A live status layer over the assets, with every field labelled by how it was
 established:
@@ -105,7 +105,7 @@ established:
 * taken from issuer documentation, with a link
 * probed by simulation, with its coverage limits stated
 
-The third label is the one that makes Numa different, and it is also the one
+The third label is the one that makes Basis different, and it is also the one
 with the most caveats. Both are documented.
 
 ## Current state
@@ -118,7 +118,7 @@ EOF
 cat > docs/concepts/rights-vs-restrictions.md <<'EOF'
 # Rights vs restrictions
 
-Numa separates two things that are usually mixed together.
+Basis separates two things that are usually mixed together.
 
 ## Rights (static)
 
@@ -135,7 +135,7 @@ single record covering all of them:
 | Economic exposure | Yes |
 | Dividend treatment | Cash equivalent, credited offchain |
 
-Source: issuer Base Prospectus and Final Terms. Numa links to them and does not
+Source: issuer Base Prospectus and Final Terms. Basis links to them and does not
 paraphrase them into anything resembling advice.
 
 ## Restrictions (live, per asset)
@@ -150,7 +150,7 @@ What you can actually do right now:
 * listed on lending or AMM venues
 * jurisdictions where the asset is restricted
 
-This is the part that moves, and the part Numa refreshes.
+This is the part that moves, and the part Basis refreshes.
 
 ## Why the split matters
 
@@ -192,8 +192,8 @@ cat > docs/guides/running-the-probe.md <<'EOF'
 
 ## Install
 
-    bash numa-probe.sh
-    cd numa
+    bash basis-probe.sh
+    cd basis
     npm install
 
 ## Test
@@ -229,7 +229,7 @@ a matching ticker at a different address is not a Robinhood Stock Token.
 
 ## Configuration
 
-Set `NUMA_RPC` to override the default mainnet endpoint.
+Set `BASIS_RPC` to override the default mainnet endpoint.
 EOF
 
 # ---------------------------------------------------------------- reference
@@ -323,7 +323,7 @@ registry.
 
 ## Not legal advice
 
-Numa reports what documentation and chain state say. It links to primary sources
+Basis reports what documentation and chain state say. It links to primary sources
 and does not interpret them. It is not advice of any kind, and the underlying
 assets are restricted in a number of jurisdictions.
 EOF

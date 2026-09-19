@@ -1,6 +1,6 @@
 # Rights vs restrictions
 
-Numa separates two things that are usually mixed together.
+Basis separates two things that are usually mixed together.
 
 ## Rights (static)
 
@@ -17,7 +17,7 @@ single record covering all of them:
 | Economic exposure | Yes |
 | Dividend treatment | Cash equivalent, credited offchain |
 
-Source: issuer Base Prospectus and Final Terms. Numa links to them and does not
+Source: issuer Base Prospectus and Final Terms. Basis links to them and does not
 paraphrase them into anything resembling advice.
 
 ## Restrictions (live, per asset)
@@ -32,7 +32,7 @@ What you can actually do right now:
 * listed on lending or AMM venues
 * jurisdictions where the asset is restricted
 
-This is the part that moves, and the part Numa refreshes.
+This is the part that moves, and the part Basis refreshes.
 
 ## Why the split matters
 
