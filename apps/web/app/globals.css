@@ -1,0 +1,132 @@
+:root{
+  color-scheme: dark;
+
+  /* swap these to reskin the whole page */
+  --bg:#0C0C0C;
+  --panel:#171715;
+  --ink:#FBFBF7;
+  --muted:#B5B3AA;
+  --faint:#6E6C66;
+  --line:rgba(255,255,255,.10);
+  --accent:#D93A2B;
+
+  --good:#5DD68E;
+  --warn:#E0A85A;
+  --bad:#F87171;
+
+  --step--2: clamp(10px, 0.55vw + 8.4px, 11.5px);
+  --step--1: clamp(11.5px, 0.6vw + 9.7px, 12.5px);
+  --step-0:  clamp(12.5px, 0.7vw + 10.5px, 13.5px);
+  --step-1:  clamp(13.5px, 0.8vw + 11.2px, 15px);
+  --step-2:  clamp(15px, 1vw + 12.2px, 17px);
+  --step-3:  clamp(18px, 1.6vw + 13.8px, 22px);
+  --step-4:  clamp(21px, 2.4vw + 14.6px, 28px);
+  --step-5:  clamp(24px, 3.4vw + 15px, 34px);
+
+  --sans:'Geist',-apple-system,system-ui,sans-serif;
+  --mono:'Geist Mono',ui-monospace,'SF Mono',monospace;
+
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-weight:400;
+  font-feature-settings:"cv02","cv03","cv04","cv11";
+  letter-spacing:-0.4px;
+  font-optical-sizing:auto;font-synthesis:none;
+  -webkit-font-smoothing:antialiased;
+}
+a{color:inherit;text-decoration:none}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-0.5px}
+.mono{font-family:var(--mono);font-size:.92em;letter-spacing:0}
+
+/* shared layout rhythm, used by every section from here on */
+section.s{padding-inline:16px}
+@media(min-width:640px){section.s{padding-inline:32px}}
+@media(min-width:1024px){section.s{padding-inline:30px}}
+.wrap{max-width:1160px;margin:0 auto}
+.wrap-narrow{max-width:860px;margin:0 auto}
+
+.eyebrow{display:flex;align-items:center;gap:9px;margin-bottom:18px}
+.eyebrow i{height:3px;width:18px;border-radius:2px;background:var(--accent);display:block}
+.eyebrow span{font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+
+.pill-lg{
+  display:inline-flex;align-items:center;gap:9px;height:52px;padding:0 26px 0 22px;
+  border-radius:999px;font-size:16px;font-weight:530;
+  transition:transform 180ms,opacity 180ms,background 180ms;
+}
+.pill-lg.solid{background:var(--ink);color:var(--bg)}
+.pill-lg.solid:hover{transform:translateY(-1px);opacity:.92}
+.pill-lg.ghost{background:transparent;color:var(--ink);border:1px solid var(--line)}
+.pill-lg.ghost:hover{transform:translateY(-1px);background:rgba(255,255,255,.04)}
+
+/* content sits above the fixed backdrop */
+header, section { position: relative; z-index: 1; }
+
+/* the warp pulse reaches every section, not just the hero */
+body.warp .warpable{
+  filter: blur(9px);
+  opacity: .34;
+}
+.warpable{
+  transition: filter 620ms cubic-bezier(.16,1,.3,1), opacity 620ms cubic-bezier(.16,1,.3,1);
+}
+@media (prefers-reduced-motion: reduce){
+  .warpable, body.warp .warpable{filter:none;opacity:1;transition:none}
+}
+
+/* scroll reveal, one effect used consistently */
+.r{
+  opacity:0;
+  transform:translateY(18px);
+  transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1);
+}
+.r.in{opacity:1;transform:none}
+.r-1{transition-delay:.06s}
+.r-2{transition-delay:.12s}
+.r-3{transition-delay:.18s}
+@media (prefers-reduced-motion: reduce){
+  .r{opacity:1;transform:none;transition:none}
+}
+.r{filter:blur(10px)}
+.r.in{filter:none}
+.r{transition:opacity .7s cubic-bezier(.16,1,.3,1), transform .7s cubic-bezier(.16,1,.3,1), filter .7s cubic-bezier(.16,1,.3,1)}
+
+/* reveal: blur + slide, direction depends on element role.
+   Headings and eyebrows come down, body copy and cards come up. */
+.r{
+  opacity:0;
+  filter:blur(14px);
+  transform:translateY(30px);
+  transition:opacity .8s cubic-bezier(.16,1,.3,1),
+             transform .8s cubic-bezier(.16,1,.3,1),
+             filter .8s cubic-bezier(.16,1,.3,1);
+}
+.r.in{opacity:1;filter:none;transform:none}
+
+/* down-entering elements */
+.r-down{transform:translateY(-30px)}
+
+/* cards slide without the blur, as in the reference */
+.r-card{filter:none}
+
+@media (prefers-reduced-motion: reduce){
+  .r{opacity:1;filter:none;transform:none;transition:none}
+}
+
+/* ---------- light theme trial ---------- */
+:root{
+  color-scheme: light;
+  --bg:#F6F5F1;
+  --panel:#FFFFFF;
+  --ink:#0C0C0C;
+  --muted:#4A4844;
+  --faint:#86837B;
+  --line:rgba(0,0,0,.13);
+}
+@media (prefers-reduced-motion: reduce){
+  .r, [class*="card"]{transition:none !important;transform:none !important}
+}
