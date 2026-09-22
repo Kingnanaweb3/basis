@@ -72,7 +72,7 @@ export default function Affected() {
             </p>
           </div>
 
-          <div className={`${styles.panel} r r-1`}>
+          <div className={`${styles.panel} r r-1 r-right`}>
             <div className={styles.thead}>
               <span>Asset</span>
               <span>Multiplier</span>

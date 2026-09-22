@@ -1,0 +1,49 @@
+.block{padding-top:clamp(88px,13vw,170px);padding-bottom:clamp(60px,8vw,110px)}
+
+.head{margin-bottom:clamp(40px,6vw,68px)}
+.h2{
+  margin:0;font-size:30px;font-weight:400;line-height:1.04;letter-spacing:-.5px;
+  text-wrap:balance;max-width:18ch;
+}
+@media(min-width:640px){.h2{font-size:40px}}
+@media(min-width:1024px){.h2{font-size:54px}}
+.lead{margin:18px 0 0;font-size:16px;line-height:1.85;color:var(--muted);max-width:54ch}
+
+.grid{display:grid;gap:16px}
+@media(min-width:900px){.grid{grid-template-columns:1fr 1.1fr;gap:20px;align-items:stretch}}
+
+.panel{
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;
+  background:rgba(255,255,255,.72);backdrop-filter:blur(14px);
+  box-shadow:0 40px 90px -40px rgba(90,70,65,.16);
+}
+.panelHead{
+  display:flex;justify-content:space-between;align-items:center;
+  padding:14px 18px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+}
+.tag{font-size:9.5px;letter-spacing:.08em;border:1px solid var(--line);border-radius:999px;padding:3px 8px}
+
+.ep{padding:15px 18px;border-top:1px solid rgba(0,0,0,.06);transition:background 180ms}
+.ep:first-of-type{border-top:0}
+.ep:hover{background:rgba(0,0,0,.022)}
+.epTop{display:flex;align-items:center;gap:12px}
+.method{
+  font-family:var(--mono);font-size:10px;letter-spacing:.08em;color:var(--accent);
+  border:1px solid rgba(217,58,43,.3);border-radius:6px;padding:3px 7px;
+}
+.path{font-family:var(--mono);font-size:13px;color:var(--ink)}
+.desc{margin:8px 0 0;font-size:13px;line-height:1.6;color:var(--muted)}
+
+.code{background:#141211;border-color:rgba(0,0,0,.4)}
+.code .panelHead{color:#8E8A82;border-bottom-color:rgba(255,255,255,.08)}
+.code .tag{border-color:rgba(255,255,255,.14)}
+.pre{
+  margin:0;padding:20px 18px;overflow-x:auto;
+  font-family:var(--mono);font-size:12.5px;line-height:1.75;color:#E9E6DF;
+}
+
+.note{
+  margin:22px 0 0;max-width:72ch;
+  font-size:13px;line-height:1.75;color:var(--faint);
+}

@@ -62,7 +62,7 @@ export default function Token() {
             </p>
           </div>
 
-          <div className={`${styles.panel} r r-1`}>
+          <div className={`${styles.panel} r r-1 r-scale`}>
             <div className={styles.facts}>
               {FACTS.map(([k, v]) => (
                 <div className={styles.fact} key={k}>

@@ -42,7 +42,7 @@ export default function Hero() {
             <a className="pill-lg ghost" href="#findings">Read the findings</a>
           </div>
 
-          <div className={`${styles.card} r r-card r-1`}>
+          <div className={`${styles.card} r r-card r-1 r-up`}>
             <div className={styles.cardHead}>
               <span className={styles.mk} />
               <span>Basis check</span>

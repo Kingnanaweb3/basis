@@ -42,7 +42,7 @@ export default function Problem() {
             </p>
           </div>
 
-          <div className={`${styles.table} r r-1`}>
+          <div className={`${styles.table} r r-1 r-tilt`}>
             <div className={styles.thead}>
               <div className={styles.th} />
               <div className={`${styles.th} ${styles.own}`}>

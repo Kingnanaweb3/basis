@@ -23,7 +23,7 @@ export default function Footer() {
   return (
     <footer className={`s ${styles.footer}`}>
       <div className="wrap">
-        <div className={`${styles.top} r`}>
+        <div className={`${styles.top} r r-left`}>
           <div className={styles.brandCol}>
             <div className={styles.brand}>
               <span className={styles.mk} />
@@ -54,7 +54,7 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className={`${styles.bottom} r r-1`}>
+        <div className={`${styles.bottom} r r-1 r-right`}>
           <p className={styles.fine}>
             Basis reports measurements read from public sources. It is not financial or
             legal advice, and it does not quote prices. Robinhood Stock Tokens are issued

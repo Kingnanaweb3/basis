@@ -71,7 +71,7 @@ export default function Steps() {
 
           <div className={styles.grid}>
             {STEPS.map((s, i) => (
-              <article className={`${styles.card} r r-card r-${i + 1}`} key={s.n}>
+              <article className={`${styles.card} r r-card r-${i + 1} ${["r-left", "r-up", "r-right"][i]}`} key={s.n}>
                 <div className={styles.art}>{s.art}</div>
                 <div className={styles.meta}>
                   <span className={styles.n}>{s.n}</span>
