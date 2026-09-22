@@ -26,7 +26,7 @@ export default function Footer() {
         <div className={`${styles.top} r r-left`}>
           <div className={styles.brandCol}>
             <div className={styles.brand}>
-              <span className={styles.mk} />
+              <img src="/logo.jpg" alt="Basis" className={styles.logo} />
               basis
             </div>
             <p className={styles.blurb}>

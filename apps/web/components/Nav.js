@@ -15,7 +15,7 @@ export default function Nav() {
   return (
     <nav className={`${styles.nav} ${stuck ? styles.stuck : ""}`}>
       <div className={styles.brand}>
-        <span className={styles.mk} />
+        <img src="/logo.jpg" alt="Basis" className={styles.logo} />
         basis
       </div>
       <a className={`${styles.link} ${styles.hideSm}`} href="#findings">Findings</a>

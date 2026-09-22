@@ -29,3 +29,9 @@
 .cta:hover{color:var(--bg);background:var(--ink);opacity:.92}
 
 @media(max-width:860px){.hideSm{display:none}}
+
+.logo{height:24px;width:auto;display:block;border-radius:6px;flex:none}
+
+.nav{height:68px}
+.brand{font-size:21px;gap:11px;font-weight:550;letter-spacing:-0.6px}
+.logo{height:34px}

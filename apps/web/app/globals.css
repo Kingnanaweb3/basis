@@ -139,3 +139,8 @@ body.warp .warpable{
 .r-scale{transform:scale(.92)}
 .r-tilt{transform:perspective(1000px) rotateX(14deg) translateY(40px);transform-origin:50% 100%}
 .r.in{opacity:1;filter:none;transform:none}
+
+/* slide-ins translate content past the viewport edge; clip it so the page
+   can never scroll sideways. clip, not hidden, so the fixed nav is unaffected */
+html, body{overflow-x:clip;max-width:100%}
+section, footer, header{overflow-x:clip}
